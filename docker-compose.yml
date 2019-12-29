@@ -1,7 +1,7 @@
 version: '3'
 services:
     db:
-     container_name: 'mysql2'
+     container_name: 'mysql'
      image: mysql:5.7
      environment:
       MYSQL_DATABASE: 'milab_beta'
@@ -10,7 +10,6 @@ services:
       MYSQL_ROOT_PASSWORD: 'pass'
      volumes:
       - msdata:/var/lib/mysql
-    
     web:
      build: .
      command: bash -c "python mysite/manage.py runserver 0.0.0.0:8081"
